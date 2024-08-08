@@ -1,0 +1,92 @@
+<mvc:View
+    xmlns:form="sap.ui.layout.form"
+    controllerName="com.sun.myproject.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+        showHeader="false"
+    >
+        <content>
+            <form:SimpleForm
+                layout="ResponsiveGridLayout"
+                title="Address"
+                editable="true"
+                columnsL="2"
+                emptySpanL="4"
+                labelSpanL="4"
+            >
+                <form:content>
+                    <Label text="First Name" />
+                    <Input
+                        id="idIpFirstName"
+                        maxLength="40"
+                        required="true"
+                    />
+                    <Label text="Last Name" />
+                    <Input
+                        id="idIpLastName"
+                        maxLength="40"
+                        required="true"
+                    />
+                    <Label text="Email" />
+                    <Input
+                        id="idIpEmail"
+                        required="true"
+                    />
+                    <Label text="DoB" />
+                    <DatePicker
+                        id="idDpDoB"
+                        required="true"
+                    />
+                    <Label
+                        text="Gender"
+                        labelFor="groupC"
+                    />
+                    <RadioButtonGroup
+                        id="groupC"
+                        columns="2"
+                        selectedIndex="-1"
+                        select="onGenderSelect"
+                    >
+                        <RadioButton text="Male" />
+                        <RadioButton text="Female" />
+                    </RadioButtonGroup>
+                    <Label text="Enter Password" />
+                    <Input
+                        id="idIpPassword"
+                        required="true"
+                        maxLength="20"
+                        type="Password"
+                    />
+                    <Label text="Re-enter Password" />
+                    <Input
+                        id="idIpReenterPasseord"
+                        required="true"
+                        maxLength="20"
+                        type="Password"
+                    />
+                </form:content>
+                <form:toolbar>
+                    <Toolbar>
+                        <content>
+                            <Title text="Sign Up form" />
+                            <ToolbarSpacer />
+                            <Button text="Submit" press="onPressSubmit" />
+                        </content>
+                    </Toolbar>
+                </form:toolbar>
+            </form:SimpleForm>
+        </content>
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button text="Sign-Up" />
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>
